@@ -1,0 +1,11 @@
+.invoiceTable{
+   margin-left: -24px;
+   padding-bottom: 15px;
+    padding-top: 15px;
+}
+.inputBox:hover {
+    border-color: purple;
+ }
+ .editButton:hover {background-color: #47f14d}
+ .deleteButton:hover {background-color: #e73c3c}
+

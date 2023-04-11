@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreatePaymentMethodsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('payment_methods', function (Blueprint $table) {
+            $table->id();
+            $table->string('code', 100)->nullable();
+            $table->string('name');
+            $table->string('account_no')->nullable();
+            $table->string('account_holder_name')->nullable();
+            $table->double('opening_balance')->nullable();
+            $table->foreignId('user_id');
+            $table->foreignId('branch_id');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('payment_methods');
+    }
+}
